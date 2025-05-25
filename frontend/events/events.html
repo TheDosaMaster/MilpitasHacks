@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Events</title>
+</head>
+<body>
+    <h1>Events</h1>
+    <p>Welcome to the events page!</p>
+    <p>Here you can find information about upcoming events.</p>
+    <nav>
+            <ul>
+                <li><a href='home'>Home</a></li>
+                <li><a href='post'>Post</a></li>
+                <li><a href='home'class="active">Events</a></li>
+            </ul>
+        </nav>\
+        <h2>Volunteer sites</h2>
+    <ul>
+        <li>
+            <button onclick="window.location.href='https://www.volunteermatch.org/'">VolunteerMatch</button>
+            <button onclick="window.location.href='https://childadvocatesofcontracostacounty.org/become-an-advocate/?gad_source=1&gad_campaignid=684703389&gbraid=0AAAAADRPdcGLpEklPKmrJobJktKJ0EZV8&gclid=CjwKCAjw3MXBBhAzEiwA0vLXQWXJfjPtAFDZYy5o8rupmDlMxRb8PQbmM2MSxu1qwFcr3oErEC15MRoCluIQAvD_BwE'">CASA Volunteer</button>
+    </ul>
+    <p>Stay tuned for more updates!</p>
+
+    <style>
+        button {
+            background-color: #afad4c; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            align-items: center;
+            text-align: center;
+        }
+        button:hover {
+            background-color: #a09245; /* Darker green on hover */
+        }
+        h1, h2 {
+            color: #333; /* Dark gray for headings */
+            text-align: center;
+        }
+        p {
+            color: #666; /* Lighter gray for text */
+            text-align: center;
+            font-family: Arial, sans-serif; /* Use a clean font */
+            font-size: 18px; /* Slightly larger text */
+        }
+        ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            text-align: center; /* Center the list */
+            font-family: Arial, sans-serif; /* Use a clean font */
+            font-size: 18px; /* Slightly larger text */
+        }
+        li {
+            margin: 10px 0; /* Add some space between list items */
+        }
+        nav {
+            margin-bottom: 32px;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        li {
+            margin: 0;
+        }
+        li a {
+            display: block;
+            padding: 11px 24px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #ebe525 0%, #faf060 100%);
+            color: #222;
+            font-weight: 700;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s, transform 0.1s;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+        }
+        li a:hover, li a.active {
+            background: linear-gradient(90deg, #afa01e 0%, #d1f63b 100%);
+            color: #fff;
+            transform: translateY(-2px) scale(1.05);
+        }
+        header{
+            background-color: #bfcc09; /* Light background for header */
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif; /* Use a clean font */
+            font-size: 24px; /* Larger text for header */
+            color: #333; /* Dark gray for header text */
+        }
+        </style>
+    </body>
+</html>

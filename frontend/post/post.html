@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Camera Capture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <nav>
+            <ul>
+                <li><a href='home'>Home</a></li>
+                <li><a href='post'class="active">Post</a></li>
+                <li><a href='events'>Events</a></li>
+            </ul>
+        </nav>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #dbeafe 100%);
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .camera-container {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(0,0,0,0.08);
+            padding: 32px 28px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        video, canvas, img {
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.09);
+            width: 320px;
+            max-width: 90vw;
+            margin-bottom: 18px;
+        }
+        .capture-btn {
+            background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 36px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 18px;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .capture-btn:hover {
+            background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .base64-output {
+            word-break: break-all;
+            background: #f1f5f9;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.9rem;
+            margin-top: 12px;
+            max-width: 90vw;
+            overflow-x: auto;
+        }
+         ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            text-align: center; /* Center the list */
+            font-family: Arial, sans-serif; /* Use a clean font */
+            font-size: 18px; /* Slightly larger text */
+        }
+        li {
+            margin: 10px 0; /* Add some space between list items */
+        }
+        nav {
+            margin-bottom: 32px;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        li {
+            margin: 0;
+        }
+        li a {
+            display: block;
+            padding: 11px 24px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #ebe525 0%, #faf060 100%);
+            color: #222;
+            font-weight: 700;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s, transform 0.1s;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+        }
+        li a:hover, li a.active {
+            background: linear-gradient(90deg, #afa01e 0%, #d1f63b 100%);
+            color: #fff;
+            transform: translateY(-2px) scale(1.05);
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="camera-container">
+        <h2>Camera Capture</h2>
+        <video id="video" autoplay playsinline></video>
+        <br>
+        <button class="capture-btn" id="capture">Capture</button>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <img id="snapshot" style="display:none;" alt="Captured image">
+        <div id="base64-container" style="display:none;">
+            <h3>Base64 Image Data:</h3>
+            <div class="base64-output" id="base64-output"></div>
+        </div>
+    </div>
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const captureBtn = document.getElementById('capture');
+        const snapshot = document.getElementById('snapshot');
+        const base64Container = document.getElementById('base64-container');
+        const base64Output = document.getElementById('base64-output');
+
+        // Access the webcam
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                alert('Could not access the camera. Please allow camera access.');
+            });
+
+        // Capture the image
+        captureBtn.onclick = function() {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+            const dataUrl = canvas.toDataURL('image/png');
+            snapshot.src = dataUrl;
+            snapshot.style.display = 'block';
+            base64Output.textContent = dataUrl;
+            base64Container.style.display = 'block';
+        };
+    </script>
+</body>
+</html>
