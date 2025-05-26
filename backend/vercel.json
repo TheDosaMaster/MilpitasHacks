@@ -15,14 +15,11 @@
       "dest": "/frontend/assets/$1"
     },
     {
-      "src": "/(.)",
-      "dest": "/frontend/$1"
-    }
-  ],
-  "rewrites": [
+      "handle": "filesystem"
+    },
     {
-      "source": "/(.*)",
-      "destination": "/frontend/index.html"
+      "src": "/(.)",
+      "dest": "/frontend/index.html"
     }
   ]
 }
