@@ -8,18 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            background-image: src="begood.png";
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             margin: 0;
-            padding: 0;
+            padding: 50px;
             min-height: 100vh;
-            background: linear-gradient(135deg, #f2f6fc 0%, #dbeafe 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Roboto', Arial, sans-serif;
+            background-color: #374151;
         }
         .card {
             background: #fff;
@@ -101,17 +100,36 @@
                 font-size: 1.3rem;
             }
         }
+        .SignUp {
+            background: linear-gradient(90deg, #ebe525 0%, #faf060 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 0;
+            width: 100%;
+            font-size: 1.1rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 18px;
+        }
+        .SignUp:hover {
+            background: linear-gradient(90deg, #1e94af 0%, #3b73f6 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
     </style>
 </head>
 <body>
     <div class="card">
         <h2>Sign Up</h2>
         <form method="POST">
-            <label for="username">User:</label>
+            <label for="username">Username:</label>
             <input type="username" id="username" name="username" placeholder="Enter your username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Create a password" required>
-            <button value="Sign Up" name="submit" src="post">Sign Up</button>
+            <button class="SignUp" name="submit" src="post">Sign Up</button>
         </form>
     </div>
 </body>
