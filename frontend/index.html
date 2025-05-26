@@ -7,7 +7,11 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <!-- Favicon -->
+    <img src="begood.png" alt="BeGood Logo">
     <style>
+        img{
+            
+        }
         body {
             background-image: src="begood.png";
             background-size: cover;
@@ -16,29 +20,35 @@
             margin: 0;
             padding: 50px;
             min-height: 100vh;
-            background-image: src="begood.png";
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Roboto', Arial, sans-serif;
+            background-color: rgb(51, 61, 3);
         }
         .card {
-            background: #fff;
             border-radius: 18px;
-            box-shadow: 0 6px 32px rgba(0,0,0,0.08), 0 1.5px 5px rgba(0,0,0,0.03);
-            padding: 48px 40px 40px 40px;
+            padding: 10px 40px 40px 40px;
             max-width: 800px;
             width: 100%;
             text-align: center;
-            transition: box-shadow 0.2s;
-        }
-        .card:hover {
-            box-shadow: 0 12px 48px rgba(0,0,0,0.12), 0 3px 10px rgba(0,0,0,0.05);
         }
         h1 {
             font-family: 'Montserrat', Arial, sans-serif;
-            font-size: 2.4rem;
+            font-size: 50px;
             color: #ebe125;
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+        }
+        .color-text {
+            font-family: 'monserrat', Arial, sans-serif;
+            font-size: 50px;
+            color: #b10dab;
+            margin-bottom: 18px;
+        }
+        h2{
+            font-family: 'montserrat', Arial, sans-serif;
+            font-size: 30px;
             margin-bottom: 18px;
             letter-spacing: -1px;
         }
@@ -72,7 +82,7 @@
                 padding: 32px 12px 28px 12px;
             }
             h1 {
-                font-size: 1.5rem;
+                font-size: 200px;
             }
         }
     </style>
@@ -80,10 +90,11 @@
 <body>
     <div class="card">
        
-        <h1>Welcome to BeGood</h1>
-        <p>BeGood is a platform that helps you track your good deeds and encourages you to do more.</p>
-        <p>Sign in to start tracking your good deeds and see how you can make a difference!;</p>
+        <h1 style="color: yellow">Empowering Communities</h1>
+        <h2 style="color: black;">And</h2>
+        <h1 style="color: #b10dab;">Changing Lives</h1>
         <button class="SignInButton" onclick="window.location.href='signin'">Sign Up</button>
     </div>
+
 </body>
 </html>
