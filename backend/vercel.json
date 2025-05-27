@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && npm run build",
   "outputDirectory": "frontend/dist",
-  "framework": "vite",
   "builds": [
     {
       "src": "frontend/*/",
